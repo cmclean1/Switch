@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f3c41cc8fc3eb8b4888736e4b301f830
+timeCreated: 1505489950
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Square One
+  fontNames:
+  - Square One
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
