@@ -107,7 +107,7 @@ public class ChangeColor : MonoBehaviour
 				Destroy (gameObject);
 				controlla.GetComponent<LevelControlla> ().nextLevel = true;
 				print (controlla.GetComponent<LevelControlla> ().maxLevel > controlla.GetComponent<LevelControlla> ().whichLevel);
-				if (controlla.GetComponent<LevelControlla> ().maxLevel > controlla.GetComponent<LevelControlla> ().whichLevel) {
+				if (controlla.GetComponent<LevelControlla> ().maxLevel >	 controlla.GetComponent<LevelControlla> ().whichLevel) {
 					if (ManageSaveData.control.levelUnlocked == controlla.GetComponent<LevelControlla> ().whichLevel) {
 						ManageSaveData.control.levelUnlocked = controlla.GetComponent<LevelControlla> ().whichLevel + 1;
 					}

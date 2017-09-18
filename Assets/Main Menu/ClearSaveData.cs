@@ -12,7 +12,6 @@ public class ClearSaveData : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (areYouSure);
 		if (text.enabled == false) {
 			areYouSure = 0;
 		}
@@ -34,12 +33,14 @@ public class ClearSaveData : MonoBehaviour {
 	}
 	void OnMouseDown()
 	{
-		if(areYouSure < 3) {
-		areYouSure++;
-		}
-		if (areYouSure == 3) {
-			ManageSaveData.control.levelUnlocked = 0;
-			ManageSaveData.control.Save ();
+		if (GetComponent<Button> ().enabled && GetComponent<Button> ().interactable) {
+			if (areYouSure < 3) {
+				areYouSure++;
+			}
+			if (areYouSure == 3) {
+				ManageSaveData.control.levelUnlocked = 0;
+				ManageSaveData.control.Save ();
+			}
 		}
 	}
 }

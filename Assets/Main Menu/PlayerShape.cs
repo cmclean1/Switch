@@ -26,14 +26,24 @@ public class PlayerShape : MonoBehaviour
 		case 2:
 			whichShape = "TRIANGLE";
 			break;
+		case 3:
+			whichShape = "PENTAGON";
+			break;
+		case 4:
+			whichShape = "HEXAGON";
+			break;
 		}
 		text.text = "SHAPE: " + whichShape;
 	}
-	void OnMouseDown()
+
+	void OnMouseDown ()
 	{
-		ManageSaveData.control.whichPlayer++;
-		if (ManageSaveData.control.whichPlayer > 2) {
-			ManageSaveData.control.whichPlayer = 0;
+		if (GetComponent<Button> ().enabled) {
+			ManageSaveData.control.whichPlayer++;
+			if (ManageSaveData.control.whichPlayer > 4) {
+				ManageSaveData.control.whichPlayer = 0;
+			}
 		}
 	}
+	
 }

@@ -38,8 +38,14 @@ public class ManageSaveData : MonoBehaviour
 			player = Resources.Load ("CirclePlayer") as GameObject;
 		} else if (whichPlayer == 2) {
 			player = Resources.Load ("TrianglePlayer") as GameObject;
-
 		}
+		else if (whichPlayer == 3) {
+			player = Resources.Load ("PentagonPlayer") as GameObject;
+		}
+		else if (whichPlayer == 4) {
+			player = Resources.Load ("HexagonPlayer") as GameObject;
+		}
+
 	}
 
 	public void Save ()
