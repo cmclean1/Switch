@@ -20,6 +20,7 @@ public class LoadLevel : MonoBehaviour {
 			AudioSource aud = controlla.GetComponent<AudioSource> ();
 			aud.Play();
 		}
+		GetComponent<LoadLevel> ().enabled = false;
 
 	}
 }

@@ -7,8 +7,12 @@ public class MainMenuBackgroundSummon : MonoBehaviour {
 	public float interval;
 	public GameObject bg;
 	// Use this for initialization
+	void Awake()
+	{
+	}
 	void Start () {
 		time = Time.time;
+		ManageSaveData.control.Load ();
 	}
 	
 	// Update is called once per frame

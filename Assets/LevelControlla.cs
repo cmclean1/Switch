@@ -21,6 +21,9 @@ public class LevelControlla : MonoBehaviour
 		paused = false;
 		Instantiate (player, transform.position, Quaternion.identity);
 		musicControlla = GameObject.FindGameObjectsWithTag ("MusicControlla");
+		if (whichLevel > ManageSaveData.control.levelUnlocked) {
+			ManageSaveData.control.levelUnlocked = whichLevel;
+		}
 
 	}
 	
@@ -28,6 +31,7 @@ public class LevelControlla : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetMouseButton (0) && dead) {
+			ManageSaveData.control.Save ();
 			SceneManager.LoadScene ("Level" + whichLevel);	
 			//Instantiate(player,transform.position,Quaternion.identity);
 			dead = false;
@@ -38,6 +42,7 @@ public class LevelControlla : MonoBehaviour
 			}
 			GameObject del = GameObject.FindGameObjectWithTag ("MusicControllaControlla");
 			Destroy (del);
+			ManageSaveData.control.Save ();
 			SceneManager.LoadScene ("MainMenu");
 		} else if (paused == true && Input.GetMouseButton (0)) {
 			paused = false;
@@ -48,6 +53,7 @@ public class LevelControlla : MonoBehaviour
 		} else if (paused == true && Input.GetKeyDown (KeyCode.Escape)) {
 			paused = false;
 			Time.timeScale = 1;
+			ManageSaveData.control.Save ();
 			SceneManager.LoadScene ("MainMenu");
 			foreach (GameObject controlla in musicControlla) {
 				Destroy (controlla);
@@ -58,6 +64,7 @@ public class LevelControlla : MonoBehaviour
 			dead = false;
 			nextLevel = false;
 			if (whichLevel == maxLevel) {
+				ManageSaveData.control.Save ();
 				SceneManager.LoadScene ("MainMenu");
 				foreach (GameObject controlla in musicControlla) {
 					Destroy (controlla);
@@ -65,6 +72,7 @@ public class LevelControlla : MonoBehaviour
 				GameObject del = GameObject.FindGameObjectWithTag ("MusicControllaControlla");
 				Destroy (del);
 			} else {
+				ManageSaveData.control.Save ();
 				SceneManager.LoadScene ("Level" + (whichLevel + 1));	
 			}
 
@@ -76,6 +84,7 @@ public class LevelControlla : MonoBehaviour
 			}
 			GameObject del = GameObject.FindGameObjectWithTag ("MusicControllaControlla");
 			Destroy (del);
+			ManageSaveData.control.Save ();
 			SceneManager.LoadScene ("MainMenu");
 		}
 		

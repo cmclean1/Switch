@@ -106,6 +106,12 @@ public class ChangeColor : MonoBehaviour
 				sp.color = Color.white;
 				Destroy (gameObject);
 				controlla.GetComponent<LevelControlla> ().nextLevel = true;
+				print (controlla.GetComponent<LevelControlla> ().maxLevel > controlla.GetComponent<LevelControlla> ().whichLevel);
+				if (controlla.GetComponent<LevelControlla> ().maxLevel > controlla.GetComponent<LevelControlla> ().whichLevel) {
+					if (ManageSaveData.control.levelUnlocked == controlla.GetComponent<LevelControlla> ().whichLevel) {
+						ManageSaveData.control.levelUnlocked = controlla.GetComponent<LevelControlla> ().whichLevel + 1;
+					}
+				}
 			} else if (squareOn.gameObject.tag == "PowerGate") {
 				if (!squareOn.gameObject.GetComponent<ColorGate> ().used) {
 					controlla.GetComponent<ManagePowerups> ().powerUps [squareOn.gameObject.GetComponent<PowerGate> ().whichPower] += squareOn.gameObject.GetComponent<PowerGate> ().powerAmount;
