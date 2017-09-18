@@ -17,6 +17,7 @@ public class LevelControlla : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		player = ManageSaveData.control.player;
 		dead = false;
 		paused = false;
 		Instantiate (player, transform.position, Quaternion.identity);

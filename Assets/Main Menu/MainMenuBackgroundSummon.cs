@@ -12,7 +12,6 @@ public class MainMenuBackgroundSummon : MonoBehaviour {
 	}
 	void Start () {
 		time = Time.time;
-		ManageSaveData.control.Load ();
 	}
 	
 	// Update is called once per frame

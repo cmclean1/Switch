@@ -34,6 +34,8 @@ public class LevelSelect : MonoBehaviour {
 			} else {
 				texts [i].GetComponent<Text>().enabled = false;
 				texts [i].GetComponent<Button> ().interactable = false;
+				texts [i].GetComponent<Button> ().enabled = false;
+
 				levelPage = 0;
 
 			}
