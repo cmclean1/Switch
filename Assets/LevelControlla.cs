@@ -15,9 +15,17 @@ public class LevelControlla : MonoBehaviour
 	GameObject[] musicControlla;
 
 	// Use this for initialization
+	void Awake ()
+	{
+
+	}
+
 	void Start ()
 	{
 		player = ManageSaveData.control.player;
+		if (ManageSaveData.control.player == null) {
+			player = Resources.Load ("SquarePlayer") as GameObject;
+		}
 		dead = false;
 		paused = false;
 		Instantiate (player, transform.position, Quaternion.identity);

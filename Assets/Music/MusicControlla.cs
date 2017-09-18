@@ -10,6 +10,7 @@ public class MusicControlla : MonoBehaviour
 	public bool Switch;
 	AudioSource aud;
 	public bool canPlay;
+	public float soundMult;
 	void Start ()
 	{
 		canPlay = false;
@@ -21,17 +22,18 @@ public class MusicControlla : MonoBehaviour
 	void Update ()
 	{
 		//print (player.GetComponent<ChangeColor> ().sp.color);
+		soundMult = ManageSaveData.control.soundMult;
 		player = GameObject.FindGameObjectWithTag ("Player");
 		if (canPlay) {
 			if ((player.GetComponent<ChangeColor> ().type == type && player.GetComponent<ChangeColor> ().Switch == Switch) || player.GetComponent<ChangeColor> ().sp.color == Color.black || player.GetComponent<ChangeColor> ().sp.color == Color.white) {
-				aud.volume += .005f;
-				if (aud.volume >= 1) {
-					aud.volume = 1;
+				aud.volume += (.005f*soundMult);
+				if (aud.volume >= 1*soundMult) {
+					aud.volume = 1*soundMult;
 				}
 			} else {
-				aud.volume -= .005f;
-				if (aud.volume <= .3f) {
-					aud.volume = .3f;
+				aud.volume -= (.005f*soundMult);
+				if (aud.volume <= (.3f*soundMult)) {
+					aud.volume = (.3f*soundMult);
 				}
 			}
 		}

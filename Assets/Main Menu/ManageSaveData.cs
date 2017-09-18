@@ -11,6 +11,7 @@ public class ManageSaveData : MonoBehaviour
 	public int levelUnlocked;
 	public int whichPlayer;
 	public int whichMusic;
+	public float soundMult;
 	public GameObject player;
 	// Use this for initialization
 	void Awake ()
