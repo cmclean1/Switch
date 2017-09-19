@@ -16,7 +16,7 @@ public class ColorGateIndicator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -2.25f);
-		scale = (Time.time - startime) / 2;
+		scale = 1- (Time.time - startime) / 2;
 		gameObject.transform.localScale = new Vector2 (scale, scale);
 	}
 	IEnumerator die()

@@ -28,6 +28,8 @@ public class ManageSaveData : MonoBehaviour
 	void Start ()
 	{
 		whichPlayer = 0;
+		whichMusic = 2;
+		soundMult = 1f;
 	}
 	
 	// Update is called once per frame

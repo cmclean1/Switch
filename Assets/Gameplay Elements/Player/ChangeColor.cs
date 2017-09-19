@@ -100,7 +100,7 @@ public class ChangeColor : MonoBehaviour
 				Switch = squareOn.gameObject.GetComponent<ElementColorControl> ().Switch;
 				type = squareOn.gameObject.GetComponent<ElementColorControl> ().type;
 				squareOn.gameObject.GetComponent<ColorGate> ().used = true;
-				colorGateIndicator.GetComponent<SpriteRenderer> ().color = new Color (squareColor.color.r, squareColor.color.g, squareColor.color.b, .9f);
+				colorGateIndicator.GetComponent<SpriteRenderer> ().color = new Color (squareColor.color.r, squareColor.color.g, squareColor.color.b, 1f);
 				Instantiate (colorGateIndicator, transform.position, Quaternion.identity);
 			} else if (squareOn.gameObject.tag == "Goal") {
 				sp.color = Color.white;

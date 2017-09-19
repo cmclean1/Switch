@@ -24,6 +24,7 @@ public class PlayButton : MonoBehaviour {
 	}
 	void OnMouseUp(){
 		SceneManager.LoadScene ("Level1");	
+		MusicControllaControlla.musicControl.chooseSong ();
 		foreach (GameObject controlla in musicControlla) {
 			controlla.GetComponent<MusicControlla> ().canPlay = true;
 			AudioSource aud = controlla.GetComponent<AudioSource> ();
