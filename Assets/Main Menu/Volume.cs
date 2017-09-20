@@ -18,7 +18,7 @@ public class Volume : MonoBehaviour {
 	void OnMouseDown()
 	{
 		ManageSaveData.control.soundMult += .1f;
-		if (ManageSaveData.control.soundMult > 1.1f) {
+		if (ManageSaveData.control.soundMult > 1.01f) {
 			ManageSaveData.control.soundMult = 0f;
 		}
 	}

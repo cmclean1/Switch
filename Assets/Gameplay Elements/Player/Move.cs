@@ -7,6 +7,8 @@ public class Move : MonoBehaviour
 	Rigidbody2D rb2d;
 	public float speed = 10;
 	GameObject controlla;
+	Vector2 dist;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -29,9 +31,19 @@ public class Move : MonoBehaviour
 			}
 			float h = Input.GetAxis ("Horizontal");
 			float v = Input.GetAxis ("Vertical");
+			print(Input.GetAxis ("Vertical"));
 			Vector2 move = new Vector2 (h, v);
-			rb2d.AddForce (move * speed);
-	
+			if (ManageSaveData.control.playMode == 2) {
+				Vector2 changeMouse = new Vector2 (Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2);
+				dist = (Vector3)changeMouse-transform.position;
+				dist = Vector3.Normalize (dist);
+			}
+			if (ManageSaveData.control.playMode != 2) {
+				rb2d.AddForce (move * speed);
+			} else if((ManageSaveData.control.playMode == 2 && Input.GetMouseButton(0))){
+				rb2d.AddForce (dist * speed);
+
+			}
 			float torque = Mathf.Sqrt ((rb2d.velocity.x * rb2d.velocity.x) + (rb2d.velocity.y * rb2d.velocity.y)) * 5;
 			if (rb2d.velocity.x + rb2d.velocity.y < 0) {
 				torque *= -1;

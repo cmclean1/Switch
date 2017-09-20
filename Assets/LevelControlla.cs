@@ -39,7 +39,7 @@ public class LevelControlla : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetMouseButton (0) && dead) {
+		if (Input.GetMouseButtonDown (0) && dead) {
 			ManageSaveData.control.Save ();
 			SceneManager.LoadScene ("Level" + whichLevel);	
 			//Instantiate(player,transform.position,Quaternion.identity);
@@ -53,7 +53,7 @@ public class LevelControlla : MonoBehaviour
 			Destroy (del);
 			ManageSaveData.control.Save ();
 			SceneManager.LoadScene ("MainMenu");
-		} else if (paused == true && Input.GetMouseButton (0)) {
+		} else if (paused == true && Input.GetMouseButtonDown (0)) {
 			paused = false;
 			Time.timeScale = 1;
 		} else if (Input.GetKeyDown (KeyCode.Escape) && paused == false && Time.timeScale == 1 && dead == false && !nextLevel) {
@@ -63,13 +63,13 @@ public class LevelControlla : MonoBehaviour
 			paused = false;
 			Time.timeScale = 1;
 			ManageSaveData.control.Save ();
-			SceneManager.LoadScene ("MainMenu");
 			foreach (GameObject controlla in musicControlla) {
 				Destroy (controlla);
 			}
 			GameObject del = GameObject.FindGameObjectWithTag ("MusicControllaControlla");
 			Destroy (del);
-		} else if (Input.GetMouseButton (0) && nextLevel) {
+			SceneManager.LoadScene ("MainMenu");
+		} else if (Input.GetMouseButtonDown (0) && nextLevel) {
 			dead = false;
 			nextLevel = false;
 			if (whichLevel == maxLevel) {

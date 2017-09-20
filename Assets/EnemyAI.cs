@@ -57,6 +57,5 @@ public class EnemyAI : MonoBehaviour
 		rb2d.drag = 1;
 		dis = Vector3.Normalize (dis);
 		rb2d.AddForce (dis * -10);
-		print (dis);
 	}
 }
