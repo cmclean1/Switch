@@ -7,6 +7,7 @@ public class Move : MonoBehaviour
 	Rigidbody2D rb2d;
 	public float speed = 10;
 	GameObject controlla;
+	LevelControlla control;
 	Vector2 dist;
 
 	// Use this for initialization
@@ -14,6 +15,7 @@ public class Move : MonoBehaviour
 	{
 		controlla = GameObject.FindGameObjectWithTag ("Controlla");
 		rb2d = GetComponent<Rigidbody2D> ();
+		control = LevelControlla.control;
 
 	}
 	
@@ -21,7 +23,7 @@ public class Move : MonoBehaviour
 	void Update ()
 	{
 
-		if (!controlla.GetComponent<LevelControlla> ().paused) {
+		if (!control.paused) {
 			if (controlla.GetComponent<ManagePowerups> ().powerUps [1] == 1) {
 				speed = 20;
 			} else if (controlla.GetComponent<ManagePowerups> ().powerUps [1] == -1) {
@@ -31,7 +33,6 @@ public class Move : MonoBehaviour
 			}
 			float h = Input.GetAxis ("Horizontal");
 			float v = Input.GetAxis ("Vertical");
-			print(Input.GetAxis ("Vertical"));
 			Vector2 move = new Vector2 (h, v);
 			if (ManageSaveData.control.playMode == 2) {
 				Vector2 changeMouse = new Vector2 (Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2);

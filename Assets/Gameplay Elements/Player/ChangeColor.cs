@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ChangeColor : MonoBehaviour
 {
+	Announcer announcer;
 	Collider2D[] Backgrounds;
 	Collider2D squareOn;
 	SpriteRenderer squareColor;
@@ -14,6 +15,7 @@ public class ChangeColor : MonoBehaviour
 	public SpriteRenderer sp;
 	Vector2 dieScale;
 	GameObject controlla;
+	LevelControlla control;
 	bool dying;
 	Color switchColor;
 	public Color currentColor;
@@ -28,6 +30,7 @@ public class ChangeColor : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		announcer = Announcer.announcer;
 		blackOrWhite = true;
 		type = 0;
 		Switch = false;
@@ -55,7 +58,8 @@ public class ChangeColor : MonoBehaviour
 		dying = false;
 		dieScale = transform.localScale;
 		controlla = GameObject.FindGameObjectWithTag ("Controlla");
-		transform.position = controlla.transform.position;
+		control = LevelControlla.control;
+		transform.position = control.transform.position;
 		touchedGate = false;
 	}
 	
@@ -105,16 +109,17 @@ public class ChangeColor : MonoBehaviour
 			} else if (squareOn.gameObject.tag == "Goal") {
 				sp.color = Color.white;
 				Destroy (gameObject);
-				controlla.GetComponent<LevelControlla> ().nextLevel = true;
-				print (controlla.GetComponent<LevelControlla> ().maxLevel > controlla.GetComponent<LevelControlla> ().whichLevel);
-				if (controlla.GetComponent<LevelControlla> ().maxLevel >	 controlla.GetComponent<LevelControlla> ().whichLevel) {
-					if (ManageSaveData.control.levelUnlocked == controlla.GetComponent<LevelControlla> ().whichLevel) {
-						ManageSaveData.control.levelUnlocked = controlla.GetComponent<LevelControlla> ().whichLevel + 1;
+				control.nextLevel = true;
+				print (control.maxLevel > control.whichLevel);
+				if (control.maxLevel >	 control.whichLevel) {
+					if (ManageSaveData.control.levelUnlocked == control.whichLevel) {
+						ManageSaveData.control.levelUnlocked = control.whichLevel + 1;
 					}
 				}
 			} else if (squareOn.gameObject.tag == "PowerGate") {
 				if (!squareOn.gameObject.GetComponent<ColorGate> ().used) {
 					controlla.GetComponent<ManagePowerups> ().powerUps [squareOn.gameObject.GetComponent<PowerGate> ().whichPower] += squareOn.gameObject.GetComponent<PowerGate> ().powerAmount;
+					displayPower (squareOn.gameObject.GetComponent<PowerGate> ().whichPower, squareOn.gameObject.GetComponent<PowerGate> ().powerAmount);
 				}
 				squareOn.gameObject.GetComponent<ColorGate> ().used = true;
 
@@ -144,7 +149,33 @@ public class ChangeColor : MonoBehaviour
 		die ();
 
 	}
-
+	void displayPower(int whichPower, int powerAmount)
+	{
+		print ("ues");
+		switch (whichPower) {
+		case 0:
+			if (powerAmount == 1) {
+				announcer.Display ("Powerup: increased fov!");
+			} else if (powerAmount == -1) {
+				announcer.Display ("Powerdown: decreased fov!");
+			}
+			break;
+		case 1:
+			if (powerAmount == 1) {
+				announcer.Display ("Powerup: increased speed!");
+			} else if (powerAmount == -1) {
+				announcer.Display ("Powerdown: decreased speed!");
+			}
+			break;
+		case 2:
+			if (powerAmount == 1) {
+				announcer.Display ("Powerup: slower shrinking!");
+			} else if (powerAmount == -1) {
+				announcer.Display ("Powerdown: faster shrinking!");
+			}
+			break;
+		}
+	}
 	void getForced (int direction)
 	{
 		Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
@@ -264,7 +295,7 @@ public class ChangeColor : MonoBehaviour
 			dieScale.x -= deathRate;
 			dieScale.y -= deathRate;
 			if (transform.localScale.x <= .2f) {
-				controlla.GetComponent<LevelControlla> ().dead = true;
+				control.dead = true;
 				Destroy (gameObject);
 			}
 		} else {

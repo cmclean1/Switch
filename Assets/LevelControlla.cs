@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelControlla : MonoBehaviour
 {
+	public static LevelControlla control;
 	public bool dead;
 	public bool paused;
 	public GameObject player;
@@ -13,15 +14,19 @@ public class LevelControlla : MonoBehaviour
 	public int whichLevel;
 	public int maxLevel;
 	GameObject[] musicControlla;
+	public string levelName;
+	Announcer announcer;
 
 	// Use this for initialization
 	void Awake ()
 	{
-
+		control = this;
 	}
 
 	void Start ()
 	{
+		announcer = Announcer.announcer;
+		announcer.Display (levelName);
 		player = ManageSaveData.control.player;
 		if (ManageSaveData.control.player == null) {
 			player = Resources.Load ("SquarePlayer") as GameObject;
