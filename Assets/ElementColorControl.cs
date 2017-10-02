@@ -5,6 +5,7 @@ using UnityEngine;
 public class ElementColorControl : MonoBehaviour {
 	public int type;
 	public bool Switch;
+	public string color;
 	// Use this for initialization
 	void Start () {
 		

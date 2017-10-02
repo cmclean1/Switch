@@ -6,10 +6,18 @@ public class SimpleSquare : MonoBehaviour {
 	SpriteRenderer sp;
 	 int type;
 	 bool Switch;
+	string color;
 	// Use this for initialization
 	void Start () {
 		sp = GetComponent<SpriteRenderer> ();
-
+		switch (color) {
+		case "white":
+			sp.color = new Color (0, 0, 0);
+			break;
+		case "black":
+			sp.color = new Color (1, 1, 1);
+			break;
+		}
 		if (type == 0) {
 			if (Switch == false) {
 				sp.color = new Color (0, 0, 0);
@@ -39,6 +47,7 @@ public class SimpleSquare : MonoBehaviour {
 	void Update () {
 		type = GetComponent<ElementColorControl> ().type;
 		Switch = GetComponent<ElementColorControl> ().Switch;
+		color = GetComponent<ElementColorControl> ().color;
 		if (type == 0) {
 			if (Switch == false) {
 				sp.color = new Color (0, 0, 0);
@@ -61,6 +70,18 @@ public class SimpleSquare : MonoBehaviour {
 				sp.color = Color.yellow;
 			} else
 				sp.color = Color.magenta;
+		}
+		if (GetComponent<isButton> () != null) {
+			if (!GetComponent<isButton> ().activated) {
+				Color temp = sp.color;
+				temp.a = GetComponent<isButton> ().alphaValue;
+				sp.color = temp;
+				//sp.color = new Color (sp.color.r, sp.color.g, sp.color.b, GetComponent<isButton> ().alphaValue);
+			} else {
+				Color temp = sp.color;
+				temp.a = 1f;
+				sp.color = temp;
+			}
 		}
 	}
 }

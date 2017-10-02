@@ -165,6 +165,10 @@ public class ColorGate : MonoBehaviour
 			}
 		}
 		if (used) {
+			foreach (ParticleSystem p in particles) {
+				ParticleSystem.EmissionModule s = p.emission;
+				s.enabled = false;
+			}
 			Destroy (gameObject);
 		}
 	}

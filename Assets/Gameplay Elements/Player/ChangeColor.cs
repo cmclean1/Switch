@@ -36,7 +36,7 @@ public class ChangeColor : MonoBehaviour
 		Switch = false;
 		sp = GetComponent<SpriteRenderer> ();
 		if (type == 0) {
-			sp.color = new Color (0, 0, 0);
+			sp.color = new Color (.15f, .15f, .15f);
 		} else if (type == 1) {
 			if (Switch == false) {
 				sp.color = Color.red;
@@ -94,39 +94,45 @@ public class ChangeColor : MonoBehaviour
 			squareColor = null;
 		}
 		if (squareOn != null) {
-			if (squareOn.gameObject.tag == "ColorGate" && !touchedGate) {
-				touchedGate = true;
-				blackOrWhite = true;
-				StartCoroutine (gateSwitch ());
-				colorGateStart = Time.time;
-				colorGateEnd = Time.time + 2f;
-				sp.color = Color.white;
-				Switch = squareOn.gameObject.GetComponent<ElementColorControl> ().Switch;
-				type = squareOn.gameObject.GetComponent<ElementColorControl> ().type;
-				squareOn.gameObject.GetComponent<ColorGate> ().used = true;
-				colorGateIndicator.GetComponent<SpriteRenderer> ().color = new Color (squareColor.color.r, squareColor.color.g, squareColor.color.b, 1f);
-				Instantiate (colorGateIndicator, transform.position, Quaternion.identity);
-			} else if (squareOn.gameObject.tag == "Goal") {
-				sp.color = Color.white;
-				Destroy (gameObject);
-				control.nextLevel = true;
-				print (control.maxLevel > control.whichLevel);
-				if (control.maxLevel >	 control.whichLevel) {
-					if (ManageSaveData.control.levelUnlocked == control.whichLevel) {
-						ManageSaveData.control.levelUnlocked = control.whichLevel + 1;
+			foreach (Collider2D bg in Backgrounds) {
+				squareOn = bg;	
+				if (squareOn.gameObject.tag == "ColorGate" && !touchedGate) {
+					touchedGate = true;
+					blackOrWhite = true;
+					StartCoroutine (gateSwitch ());
+					colorGateStart = Time.time;
+					colorGateEnd = Time.time + 2f;
+					sp.color = Color.white;
+					Switch = squareOn.gameObject.GetComponent<ElementColorControl> ().Switch;
+					type = squareOn.gameObject.GetComponent<ElementColorControl> ().type;
+					squareOn.gameObject.GetComponent<ColorGate> ().used = true;
+					colorGateIndicator.GetComponent<SpriteRenderer> ().color = new Color (squareColor.color.r, squareColor.color.g, squareColor.color.b, .5f);
+					Instantiate (colorGateIndicator, transform.position, Quaternion.identity);
+				} else if (squareOn.gameObject.tag == "Goal") {
+					sp.color = Color.white;
+					Destroy (gameObject);
+					control.nextLevel = true;
+					print (control.maxLevel > control.whichLevel);
+					if (control.maxLevel > control.whichLevel) {
+						if (ManageSaveData.control.levelUnlocked == control.whichLevel) {
+							ManageSaveData.control.levelUnlocked = control.whichLevel + 1;
+						}
+					}
+				} else if (squareOn.gameObject.tag == "PowerGate") {
+					if (!squareOn.gameObject.GetComponent<ColorGate> ().used) {
+						controlla.GetComponent<ManagePowerups> ().powerUps [squareOn.gameObject.GetComponent<PowerGate> ().whichPower] += squareOn.gameObject.GetComponent<PowerGate> ().powerAmount;
+						displayPower (squareOn.gameObject.GetComponent<PowerGate> ().whichPower, squareOn.gameObject.GetComponent<PowerGate> ().powerAmount);
+					}
+					squareOn.gameObject.GetComponent<ColorGate> ().used = true;
+
+				}
+				if (squareOn.GetComponent ("Force") != null) {
+					if (squareOn.GetComponent<Force> ().enabled) {
+						getForced (squareOn.GetComponent<Force> ().direction);
 					}
 				}
-			} else if (squareOn.gameObject.tag == "PowerGate") {
-				if (!squareOn.gameObject.GetComponent<ColorGate> ().used) {
-					controlla.GetComponent<ManagePowerups> ().powerUps [squareOn.gameObject.GetComponent<PowerGate> ().whichPower] += squareOn.gameObject.GetComponent<PowerGate> ().powerAmount;
-					displayPower (squareOn.gameObject.GetComponent<PowerGate> ().whichPower, squareOn.gameObject.GetComponent<PowerGate> ().powerAmount);
-				}
-				squareOn.gameObject.GetComponent<ColorGate> ().used = true;
-
-			}
-			if (squareOn.GetComponent ("Force") != null) {
-				if (squareOn.GetComponent<Force> ().enabled) {
-					getForced (squareOn.GetComponent<Force> ().direction);
+				if (squareOn.GetComponent<isButton> () != null) {
+					squareOn.GetComponent<isButton> ().activated = true;
 				}
 			}
 		}
@@ -149,7 +155,8 @@ public class ChangeColor : MonoBehaviour
 		die ();
 
 	}
-	void displayPower(int whichPower, int powerAmount)
+
+	void displayPower (int whichPower, int powerAmount)
 	{
 		print ("ues");
 		switch (whichPower) {
@@ -176,6 +183,7 @@ public class ChangeColor : MonoBehaviour
 			break;
 		}
 	}
+
 	void getForced (int direction)
 	{
 		Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
