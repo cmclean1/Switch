@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114969869695082748}
   - component: {fileID: 114250012901092876}
   - component: {fileID: 114430029908287796}
+  - component: {fileID: 114117172404129114}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -94,6 +95,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908104006594304}
   m_Enabled: 1
+--- !u!114 &114117172404129114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908104006594304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f19108706fdce9469603d07980eb8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendMode: 0
+  intensity: 0
+  texture: {fileID: 2800000, guid: 8c0d1505e4067e041aa66fa207c3c220, type: 3}
+  overlayShader: {fileID: 4800000, guid: 8c81db0e527d24acc9bcec04e87781bd, type: 3}
 --- !u!114 &114250012901092876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,7 +125,7 @@ MonoBehaviour:
     threshold: 0.89
     softKnee: 0
     radius: 4
-    intensity: 0.5
+    intensity: 0.75
     highQuality: 1
     antiFlicker: 0
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
@@ -140,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   controlla: {fileID: 0}
+  followCamera: 0
+  panLocations: []
 --- !u!124 &124724904120949218
 Behaviour:
   m_ObjectHideFlags: 1

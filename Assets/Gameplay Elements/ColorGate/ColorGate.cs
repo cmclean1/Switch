@@ -169,7 +169,13 @@ public class ColorGate : MonoBehaviour
 				ParticleSystem.EmissionModule s = p.emission;
 				s.enabled = false;
 			}
-			Destroy (gameObject);
+			GetComponent<BoxCollider2D> ().enabled = false;
+			sp.color = new Color (.1f, .1f, .1f);
+			foreach (SpriteRenderer s in sps) {
+				s.color = new Color (.5f, .5f, .5f);
+			}
+
+			//Destroy (gameObject);
 		}
 	}
 }

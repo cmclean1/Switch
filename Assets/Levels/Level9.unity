@@ -1963,7 +1963,7 @@ Prefab:
     - target: {fileID: 114969869695082748, guid: 3d4309d249d89f247916bdb9ef8296b3,
         type: 2}
       propertyPath: panLocations.Array.data[2].y
-      value: 102.5
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 114969869695082748, guid: 3d4309d249d89f247916bdb9ef8296b3,
         type: 2}
@@ -1978,7 +1978,7 @@ Prefab:
     - target: {fileID: 114969869695082748, guid: 3d4309d249d89f247916bdb9ef8296b3,
         type: 2}
       propertyPath: panLocations.Array.data[0].x
-      value: 50
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 114969869695082748, guid: 3d4309d249d89f247916bdb9ef8296b3,
         type: 2}
