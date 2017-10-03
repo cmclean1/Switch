@@ -43,7 +43,7 @@ fragmentInput vert( vertexInput i )
     o.color = _Color;
     return o;
 }
- 
+fixed4 _TextureSampleAdd;
 half4 frag( fragmentInput i ) : COLOR
 {
     return i.color;

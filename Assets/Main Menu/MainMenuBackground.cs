@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMenuBackground : MonoBehaviour
 {
+	Color[] colors;
 	 int start;
 	/* 0 = right
 	 * 1 = bottom
@@ -17,6 +18,8 @@ public class MainMenuBackground : MonoBehaviour
 	void Start ()
 	{
 		GetComponent<SpriteRenderer> ().color = new Color (Random.value, Random.value, Random.value);
+		colors = new Color[] {Color.blue, Color.green, Color.red, Color.cyan, Color.yellow, Color.magenta};
+		GetComponent<SpriteRenderer> ().color = colors[Random.Range(0,colors.Length-1)];
 		start = Mathf.RoundToInt (Random.value * 3);
 		if (start == 0) {
 			transform.position = new Vector3 (30, 0, 5);

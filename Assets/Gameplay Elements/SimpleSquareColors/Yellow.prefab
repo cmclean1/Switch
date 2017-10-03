@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   Switch: 0
+  color: 
 --- !u!114 &114943565838934028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +114,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c0d1505e4067e041aa66fa207c3c220, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
