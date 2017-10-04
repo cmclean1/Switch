@@ -22,63 +22,63 @@ public class ColorGate : MonoBehaviour
 		sp = GetComponent<SpriteRenderer> ();
 		if (type == 0) {
 			if (Switch == false) {
-				sp.color = new Color (0, 0, 0);
+				sp.color = ColorLibrary.colorLib.black;
 			} else
-				sp.color = new Color (1, 1, 1);
+				sp.color = ColorLibrary.colorLib.white;
 		} else if (type == 1) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.red;
+					tt.color = ColorLibrary.colorLib.red;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.red;
+					s.startColor = ColorLibrary.colorLib.red;
 				}
 
 			} else {
-				//	sp.color = Color.green;
+				//	sp.color = ColorLibrary.colorLib.green;
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.green;
+					tt.color = ColorLibrary.colorLib.green;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.green;
+					s.startColor = ColorLibrary.colorLib.green;
 				}
 			}
 		} else if (type == 2) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = new Color (1, .647f, 0);
+					tt.color = ColorLibrary.colorLib.orange;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = new Color (1, .647f, 0);
+					s.startColor = ColorLibrary.colorLib.orange;
 				}
 			} else {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.blue;
+					tt.color = ColorLibrary.colorLib.blue;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.blue;
+					s.startColor = ColorLibrary.colorLib.blue;
 				}
 			}
 		} else if (type == 3) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.yellow;
+					tt.color = ColorLibrary.colorLib.yellow;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.yellow;
+					s.startColor = ColorLibrary.colorLib.yellow;
 				}
 			} else {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.magenta;
+					tt.color = ColorLibrary.colorLib.purple;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.magenta;
+					s.startColor = ColorLibrary.colorLib.purple;
 				}
 			}
 		}
@@ -92,11 +92,11 @@ public class ColorGate : MonoBehaviour
 		if (type == 0) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.gray;
+					tt.color = ColorLibrary.colorLib.grey;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.gray;
+					s.startColor = ColorLibrary.colorLib.grey;
 				}
 			} else {
 				foreach (SpriteRenderer tt in sps) {
@@ -110,57 +110,57 @@ public class ColorGate : MonoBehaviour
 		} else if (type == 1) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.red;
+					tt.color = ColorLibrary.colorLib.red;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.red;
+					s.startColor = ColorLibrary.colorLib.red;
 				}
 
 			} else {
-				//	sp.color = Color.green;
+				//	sp.color = ColorLibrary.colorLib.green;
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.green;
+					tt.color = ColorLibrary.colorLib.green;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.green;
+					s.startColor = ColorLibrary.colorLib.green;
 				}
 			}
 		} else if (type == 2) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = new Color (1, .647f, 0);
+					tt.color = ColorLibrary.colorLib.orange;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = new Color (1, .647f, 0);
+					s.startColor = ColorLibrary.colorLib.orange;
 				}
 			} else {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.blue;
+					tt.color = ColorLibrary.colorLib.blue;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.blue;
+					s.startColor = ColorLibrary.colorLib.blue;
 				}
 			}
 		} else if (type == 3) {
 			if (Switch == false) {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.yellow;
+					tt.color = ColorLibrary.colorLib.yellow;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.yellow;
+					s.startColor = ColorLibrary.colorLib.yellow;
 				}
 			} else {
 				foreach (SpriteRenderer tt in sps) {
-					tt.color = Color.magenta;
+					tt.color = ColorLibrary.colorLib.purple;
 				}
 				foreach (ParticleSystem p in particles) {
 					ParticleSystem.MainModule s = p.main;
-					s.startColor = Color.magenta;
+					s.startColor = ColorLibrary.colorLib.purple;
 				}
 			}
 		}
@@ -170,9 +170,9 @@ public class ColorGate : MonoBehaviour
 				s.enabled = false;
 			}
 			GetComponent<BoxCollider2D> ().enabled = false;
-			sp.color = new Color (.1f, .1f, .1f);
+			sp.color = ColorLibrary.colorLib.grey;
 			foreach (SpriteRenderer s in sps) {
-				s.color = new Color (.5f, .5f, .5f);
+				s.color = ColorLibrary.colorLib.grey;
 			}
 
 			//Destroy (gameObject);

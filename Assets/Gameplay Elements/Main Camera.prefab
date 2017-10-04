@@ -123,9 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     threshold: 0.89
-    softKnee: 0
-    radius: 4
-    intensity: 0.75
+    softKnee: 1
+    radius: 3
+    intensity: 1
     highQuality: 1
     antiFlicker: 0
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}

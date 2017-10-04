@@ -12,34 +12,34 @@ public class SimpleSquare : MonoBehaviour {
 		sp = GetComponent<SpriteRenderer> ();
 		switch (color) {
 		case "white":
-			sp.color = new Color (0, 0, 0);
+			sp.color = ColorLibrary.colorLib.white;
 			break;
 		case "black":
-			sp.color = new Color (1, 1, 1);
+			sp.color = ColorLibrary.colorLib.black;
 			break;
 		}
 		if (type == 0) {
 			if (Switch == false) {
-				sp.color = new Color (0, 0, 0);
+				sp.color = ColorLibrary.colorLib.black;
 			} else
-				sp.color = new Color (1, 1, 1);
+				sp.color = ColorLibrary.colorLib.white;
 		} else if (type == 1) {
 			if (Switch == false) {
-				sp.color = Color.red;
+				sp.color = ColorLibrary.colorLib.red;
 			} else
-				sp.color = Color.green;
+				sp.color = ColorLibrary.colorLib.green;
 		}
 		else if (type == 2) {
 			if (Switch == false) {
-				sp.color = new Color (1, .647f, 0);
+				sp.color = ColorLibrary.colorLib.orange;
 			} else
-				sp.color = Color.blue;
+				sp.color = ColorLibrary.colorLib.blue;
 		}
 		else if (type == 3) {
 			if (Switch == false) {
-				sp.color = Color.yellow;
+				sp.color = ColorLibrary.colorLib.yellow;
 			} else
-				sp.color = Color.magenta;
+				sp.color = ColorLibrary.colorLib.purple;
 		}
 	}
 	
@@ -50,26 +50,26 @@ public class SimpleSquare : MonoBehaviour {
 		color = GetComponent<ElementColorControl> ().color;
 		if (type == 0) {
 			if (Switch == false) {
-				sp.color = new Color (0, 0, 0);
+				sp.color = ColorLibrary.colorLib.black;
 			} else
-				sp.color = new Color (1, 1, 1);
+				sp.color = ColorLibrary.colorLib.white;
 		} else if (type == 1) {
 			if (Switch == false) {
-				sp.color = Color.red;
+				sp.color = ColorLibrary.colorLib.red;
 			} else
-				sp.color = Color.green;
+				sp.color = ColorLibrary.colorLib.green;
 		}
 		else if (type == 2) {
 			if (Switch == false) {
-				sp.color = new Color (1, .647f, 0);
+				sp.color = ColorLibrary.colorLib.orange;
 			} else
-				sp.color = Color.blue;
+				sp.color = ColorLibrary.colorLib.blue;
 		}
 		else if (type == 3) {
 			if (Switch == false) {
-				sp.color = Color.yellow;
+				sp.color = ColorLibrary.colorLib.yellow;
 			} else
-				sp.color = Color.magenta;
+				sp.color = ColorLibrary.colorLib.purple;
 		}
 		if (GetComponent<isButton> () != null) {
 			if (!GetComponent<isButton> ().activated) {

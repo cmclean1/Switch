@@ -36,22 +36,22 @@ public class ChangeColor : MonoBehaviour
 		Switch = false;
 		sp = GetComponent<SpriteRenderer> ();
 		if (type == 0) {
-			sp.color = new Color (.15f, .15f, .15f);
+			sp.color = ColorLibrary.colorLib.grey;
 		} else if (type == 1) {
 			if (Switch == false) {
-				sp.color = Color.red;
+				sp.color = ColorLibrary.colorLib.red;
 			} else
-				sp.color = Color.green;
+				sp.color = ColorLibrary.colorLib.green;
 		} else if (type == 2) {
 			if (Switch == false) {
-				sp.color = new Color (1, .647f, 0);
+				sp.color = ColorLibrary.colorLib.orange;
 			} else
-				sp.color = Color.blue;
+				sp.color = ColorLibrary.colorLib.blue;
 		} else if (type == 3) {
 			if (Switch == false) {
-				sp.color = Color.yellow;
+				sp.color = ColorLibrary.colorLib.yellow;
 			} else
-				sp.color = Color.magenta;
+				sp.color = ColorLibrary.colorLib.purple;
 		}
 		switchColor = Color.white;
 		currentColor = Color.white;
@@ -69,19 +69,19 @@ public class ChangeColor : MonoBehaviour
 		if (type == 0) {
 		} else if (type == 1) {
 			if (Switch == false) {
-				switchColor = Color.red;
+				switchColor = ColorLibrary.colorLib.red;
 			} else
-				switchColor = Color.green;
+				switchColor = ColorLibrary.colorLib.green;
 		} else if (type == 2) {
 			if (Switch == false) {
-				switchColor = new Color (1, .647f, 0);
+				switchColor = ColorLibrary.colorLib.orange;
 			} else
-				switchColor = Color.blue;
+				switchColor = ColorLibrary.colorLib.blue;
 		} else if (type == 3) {
 			if (Switch == false) {
-				switchColor = Color.yellow;
+				switchColor = ColorLibrary.colorLib.yellow;
 			} else
-				switchColor = Color.magenta;
+				switchColor = ColorLibrary.colorLib.purple;
 		}
 		Backgrounds = Physics2D.OverlapPointAll (transform.position);
 		if (Backgrounds.Length != 0) {
@@ -106,7 +106,7 @@ public class ChangeColor : MonoBehaviour
 					Switch = squareOn.gameObject.GetComponent<ElementColorControl> ().Switch;
 					type = squareOn.gameObject.GetComponent<ElementColorControl> ().type;
 					squareOn.gameObject.GetComponent<ColorGate> ().used = true;
-					colorGateIndicator.GetComponent<SpriteRenderer> ().color = new Color (squareColor.color.r, squareColor.color.g, squareColor.color.b, .5f);
+					colorGateIndicator.GetComponent<SpriteRenderer> ().color = new Color (squareColor.color.r, squareColor.color.g, squareColor.color.b, .8f);
 					Instantiate (colorGateIndicator, transform.position, Quaternion.identity);
 				} else if (squareOn.gameObject.tag == "Goal") {
 					sp.color = Color.white;
@@ -158,7 +158,6 @@ public class ChangeColor : MonoBehaviour
 
 	void displayPower (int whichPower, int powerAmount)
 	{
-		print ("ues");
 		switch (whichPower) {
 		case 0:
 			if (powerAmount == 1) {
@@ -213,32 +212,32 @@ public class ChangeColor : MonoBehaviour
 
 			if (type == 0) {
 				if (Switch == false) {
-					sp.color = new Color (0, 0, 0);
+					sp.color = ColorLibrary.colorLib.white;
 				} else
-					sp.color = new Color (1, 1, 1);
+					sp.color = ColorLibrary.colorLib.black;
 			} else if (type == 1) {
 				if (Switch == false) {
-					sp.color = Color.red;
-					currentColor = Color.green;
+					sp.color = ColorLibrary.colorLib.red;
+					currentColor = ColorLibrary.colorLib.green;
 				} else {
-					sp.color = Color.green;
-					currentColor = Color.red;
+					sp.color = ColorLibrary.colorLib.green;
+					currentColor = ColorLibrary.colorLib.red;
 				}
 			} else if (type == 2) {
 				if (Switch == false) {
-					sp.color = new Color (1, .647f, 0);
-					currentColor = Color.blue;
+					sp.color = ColorLibrary.colorLib.orange;
+					currentColor = ColorLibrary.colorLib.blue;
 				} else {
-					sp.color = Color.blue;
-					currentColor = new Color (1, .647f, 0);
+					sp.color = ColorLibrary.colorLib.blue;
+					currentColor = ColorLibrary.colorLib.orange;
 				}
 			} else if (type == 3) {
 				if (Switch == false) {
-					sp.color = Color.yellow;
-					currentColor = Color.magenta;
+					sp.color = ColorLibrary.colorLib.yellow;
+					currentColor = ColorLibrary.colorLib.purple;
 				} else {
-					sp.color = Color.magenta;
-					currentColor = Color.yellow;
+					sp.color = ColorLibrary.colorLib.purple;
+					currentColor = ColorLibrary.colorLib.yellow;
 				}
 			}
 
@@ -253,37 +252,36 @@ public class ChangeColor : MonoBehaviour
 
 		if (type == 0) {
 			if (Switch == false) {
-				sp.color = new Color (0, 0, 0);
+				sp.color = ColorLibrary.colorLib.white;
 			} else
-				sp.color = new Color (1, 1, 1);
+				sp.color = ColorLibrary.colorLib.black;
 		} else if (type == 1) {
 			if (Switch == false) {
-				sp.color = Color.red;
-				currentColor = Color.green;
+				sp.color = ColorLibrary.colorLib.red;
+				currentColor = ColorLibrary.colorLib.green;
 			} else {
-				sp.color = Color.green;
-				currentColor = Color.red;
+				sp.color = ColorLibrary.colorLib.green;
+				currentColor = ColorLibrary.colorLib.red;
 			}
 		} else if (type == 2) {
 			if (Switch == false) {
-				sp.color = new Color (1, .647f, 0);
-				currentColor = Color.blue;
+				sp.color = ColorLibrary.colorLib.orange;
+				currentColor = ColorLibrary.colorLib.blue;
 			} else {
-				sp.color = Color.blue;
-				currentColor = new Color (1, .647f, 0);
+				sp.color = ColorLibrary.colorLib.blue;
+				currentColor = ColorLibrary.colorLib.orange;
 			}
 		} else if (type == 3) {
 			if (Switch == false) {
-				sp.color = Color.yellow;
-				currentColor = Color.magenta;
+				sp.color = ColorLibrary.colorLib.yellow;
+				currentColor = ColorLibrary.colorLib.purple;
 			} else {
-				sp.color = Color.magenta;
-				currentColor = Color.yellow;
+				sp.color = ColorLibrary.colorLib.purple;
+				currentColor = ColorLibrary.colorLib.yellow;
 			}
 		}
 
 
-		//currentColor = Color.magenta;
 
 	}
 
