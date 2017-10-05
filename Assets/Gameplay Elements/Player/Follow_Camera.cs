@@ -9,6 +9,8 @@ public class Follow_Camera : MonoBehaviour {
 	public GameObject controlla;
 	public bool followCamera = false;
 	public Vector4[] panLocations;
+	LevelControlla control;
+
 	bool happenOnce = true;
 	Vector2 offset;
 	bool inOrOut;
@@ -16,6 +18,7 @@ public class Follow_Camera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controlla = GameObject.FindGameObjectWithTag ("Controlla");
+		control = LevelControlla.control;
 		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -10);
 		GetComponent<ScreenOverlay> ().intensity = -1;
 	}
@@ -54,6 +57,7 @@ public class Follow_Camera : MonoBehaviour {
 		} else {
 			GetComponent<Camera> ().orthographicSize = 5;
 			followCamera = true;
+			control.levelStart = true;
 			GetComponent<ScreenOverlay> ().intensity = 0;
 		}
 	}

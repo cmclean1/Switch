@@ -22,7 +22,6 @@ public class Move : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		print (GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Follow_Camera> ().followCamera);
 		if (!control.paused && GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Follow_Camera>().followCamera) {
 			if (controlla.GetComponent<ManagePowerups> ().powerUps [1] == 1) {
 				speed = 20;

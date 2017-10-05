@@ -11,12 +11,16 @@ public class ManageSaveData : MonoBehaviour
 	public int levelUnlocked;
 	public int whichPlayer;
 	public int whichMusic;
+	public int maxLevel;
 	public float soundMult;
 	public int playMode;
 	public GameObject player;
+	public bool[] allPoints;
+	public bool[] timeBeat;
 	// Use this for initialization
 	void Awake ()
 	{
+
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
@@ -24,6 +28,20 @@ public class ManageSaveData : MonoBehaviour
 			Destroy (gameObject);
 		}
 		control.Load ();
+		maxLevel = 9;
+		if (allPoints.Length < maxLevel + 1) {
+			bool[] temp = new bool[maxLevel+1];
+			for (int i = 0; i < allPoints.Length; i++) {
+				temp [i] = allPoints [i];
+			}
+			allPoints = temp;
+			temp = new bool[maxLevel+1];
+			for (int i = 0; i < timeBeat.Length; i++) {
+				temp [i] = timeBeat [i];
+			}
+			timeBeat = temp;
+		}
+
 	}
 
 	void Start ()
@@ -31,6 +49,7 @@ public class ManageSaveData : MonoBehaviour
 		whichPlayer = 0;
 		whichMusic = 2;
 		soundMult = 1f;
+
 	}
 	
 	// Update is called once per frame
@@ -58,6 +77,8 @@ public class ManageSaveData : MonoBehaviour
 		FileStream file = File.Create (Application.persistentDataPath + "/saveData.dat");
 		playerData data = new playerData ();
 		data.levelUnlocked = levelUnlocked;
+		data.allPoints = allPoints;
+		data.timeBeat = timeBeat;
 		bf.Serialize (file, data);
 		file.Close ();
 	}
@@ -69,6 +90,8 @@ public class ManageSaveData : MonoBehaviour
 			FileStream file = File.Open (Application.persistentDataPath + "/saveData.dat", FileMode.Open);
 			playerData data = (playerData)bf.Deserialize (file);
 			levelUnlocked = data.levelUnlocked;
+			allPoints = data.allPoints;
+			timeBeat = data.timeBeat;
 			file.Close ();
 		}
 
@@ -81,4 +104,6 @@ class playerData
 	public int levelUnlocked;
 	public int whichPlayer;
 	public int whichMusic;
+	public bool[] allPoints;
+	public bool[] timeBeat;
 }

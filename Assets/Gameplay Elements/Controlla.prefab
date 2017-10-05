@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4642901736896396}
   - component: {fileID: 114962647609439968}
   - component: {fileID: 114528501523517904}
+  - component: {fileID: 114553683339802610}
   m_Layer: 0
   m_Name: Controlla
   m_TagString: Controlla
@@ -53,6 +54,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUps: 
+--- !u!114 &114553683339802610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663480937838206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57223ae694f9bf7489c13c9f6fba23cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {r: 0, g: 0, b: 0, a: 0}
+  orange: {r: 0, g: 0, b: 0, a: 0}
+  yellow: {r: 0, g: 0, b: 0, a: 0}
+  green: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  purple: {r: 0, g: 0, b: 0, a: 0}
+  black: {r: 0, g: 0, b: 0, a: 0}
+  grey: {r: 0, g: 0, b: 0, a: 0}
+  white: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114962647609439968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,4 +91,6 @@ MonoBehaviour:
   nextLevel: 0
   whichLevel: 3
   maxLevel: 9
+  coins: []
   levelName: 
+  collectedCoins: 0

@@ -112,7 +112,6 @@ public class ChangeColor : MonoBehaviour
 					sp.color = Color.white;
 					Destroy (gameObject);
 					control.nextLevel = true;
-					print (control.maxLevel > control.whichLevel);
 					if (control.maxLevel > control.whichLevel) {
 						if (ManageSaveData.control.levelUnlocked == control.whichLevel) {
 							ManageSaveData.control.levelUnlocked = control.whichLevel + 1;
@@ -133,6 +132,13 @@ public class ChangeColor : MonoBehaviour
 				}
 				if (squareOn.GetComponent<isButton> () != null) {
 					squareOn.GetComponent<isButton> ().activated = true;
+				}
+				if (squareOn.GetComponent ("Coin") != null) {
+					if (squareOn.GetComponent<Coin> ().collected == false) {
+						control.collectedCoins++;
+						squareOn.GetComponent<Coin> ().collected = true;
+					}
+						
 				}
 			}
 		}

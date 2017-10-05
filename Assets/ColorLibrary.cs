@@ -17,7 +17,6 @@ public class ColorLibrary : MonoBehaviour {
 	void Awake ()
 	{
 		if (colorLib == null) {
-			DontDestroyOnLoad (gameObject);
 			colorLib = this;
 		} else if (colorLib != this) {
 			Destroy (gameObject);

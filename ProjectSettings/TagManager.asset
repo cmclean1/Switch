@@ -11,6 +11,8 @@ TagManager:
   - MusicControllaControlla
   - PowerGate
   - Force
+  - Coin
+  - Stopwatch
   layers:
   - Default
   - TransparentFX

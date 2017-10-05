@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4079614799704050}
   - component: {fileID: 114528802620955242}
+  - component: {fileID: 114284044991869658}
   m_Layer: 0
   m_Name: ManageSaveData
   m_TagString: Untagged
@@ -40,6 +41,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114284044991869658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980631591618906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57223ae694f9bf7489c13c9f6fba23cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {r: 0, g: 0, b: 0, a: 0}
+  orange: {r: 0, g: 0, b: 0, a: 0}
+  yellow: {r: 0, g: 0, b: 0, a: 0}
+  green: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  purple: {r: 0, g: 0, b: 0, a: 0}
+  black: {r: 0, g: 0, b: 0, a: 0}
+  grey: {r: 0, g: 0, b: 0, a: 0}
+  white: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114528802620955242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,4 +75,6 @@ MonoBehaviour:
   levelUnlocked: 0
   whichPlayer: 0
   whichMusic: 0
+  soundMult: 0
+  playMode: 0
   player: {fileID: 0}
