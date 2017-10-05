@@ -112,6 +112,14 @@ public class ChangeColor : MonoBehaviour
 					sp.color = Color.white;
 					Destroy (gameObject);
 					control.nextLevel = true;
+					if (control.allPoints) {
+						ManageSaveData.control.allPoints [control.whichLevel] = true;
+					}
+					if (control.timesUp == false) {
+						ManageSaveData.control.timeBeat [control.whichLevel] = true;
+					}
+					ManageSaveData.control.Save ();
+
 					if (control.maxLevel > control.whichLevel) {
 						if (ManageSaveData.control.levelUnlocked == control.whichLevel) {
 							ManageSaveData.control.levelUnlocked = control.whichLevel + 1;

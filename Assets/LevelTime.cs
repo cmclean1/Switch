@@ -30,6 +30,7 @@ public class LevelTime : MonoBehaviour {
 			if (Time.time >= maxTime && control.levelStart) {
 				print (Time.time - maxTime);
 				control.timesUp = true;
+				text.text = "0";
 			}
 			text.color = new Color (1, 1, 1, 1);
 			if (cam.GetComponent<Follow_Camera> ().followCamera == false) {
