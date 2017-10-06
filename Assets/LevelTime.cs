@@ -25,10 +25,9 @@ public class LevelTime : MonoBehaviour {
 			startTime = Time.time;
 			maxTime = Time.time + control.levelTime;
 		}
-		if (!control.nextLevel) {
+		if (!control.nextLevel && !control.dead) {
 			text.text = "" + Mathf.Round (maxTime - Time.time);
 			if (Time.time >= maxTime && control.levelStart) {
-				print (Time.time - maxTime);
 				control.timesUp = true;
 				text.text = "0";
 			}

@@ -299,8 +299,10 @@ MonoBehaviour:
   coins: []
   levelName: 'Level 2: Tightrope'
   collectedCoins: 0
-  levelTime: 0
+  levelTime: 15
   timesUp: 0
+  allPoints: 0
+  beatTime: 0
 --- !u!4 &505846968
 Transform:
   m_ObjectHideFlags: 0

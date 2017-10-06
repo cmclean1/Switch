@@ -51,7 +51,6 @@ public class LevelControlla : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		print (timesUp);
 		coins =  GameObject.FindGameObjectsWithTag ("Coin");
 		if (Input.GetMouseButtonDown (0) && dead) {
 			ManageSaveData.control.Save ();
