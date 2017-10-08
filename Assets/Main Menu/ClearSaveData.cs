@@ -38,7 +38,7 @@ public class ClearSaveData : MonoBehaviour {
 				areYouSure++;
 			}
 			if (areYouSure == 3) {
-				ManageSaveData.control.levelUnlocked = 9;
+				ManageSaveData.control.levelUnlocked = ManageSaveData.control.maxLevel;
 				ManageSaveData.control.allPoints = new bool[ManageSaveData.control.maxLevel + 1];
 				ManageSaveData.control.timeBeat = new bool[ManageSaveData.control.maxLevel + 1];
 

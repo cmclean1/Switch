@@ -16,10 +16,11 @@ public class ShowPoints : MonoBehaviour
 	void Update ()
 	{
 		foreach (SpriteRenderer obj in scores) {
+			obj.GetComponent<SpriteRenderer> ().enabled = false;
+				
 			if (GetComponent<Text> ().enabled == false) {
-				obj.GetComponent<SpriteRenderer> ().enabled = false;
 			} else {
-				if (ManageSaveData.control.allPoints.Length > GetComponent<LoadLevel> ().whichlevel + 1) {
+				if (ManageSaveData.control.allPoints.Length > GetComponent<LoadLevel> ().whichlevel) {
 					if (obj.tag == "Coin") {
 						if (ManageSaveData.control.allPoints [GetComponent<LoadLevel> ().whichlevel] == true) {
 							obj.GetComponent<SpriteRenderer> ().enabled = true;

@@ -28,7 +28,7 @@ public class ManageSaveData : MonoBehaviour
 			Destroy (gameObject);
 		}
 		control.Load ();
-		maxLevel = 9;
+		//maxLevel = 9;
 		if (allPoints.Length < maxLevel + 1) {
 			bool[] temp = new bool[maxLevel+1];
 			for (int i = 0; i < allPoints.Length; i++) {

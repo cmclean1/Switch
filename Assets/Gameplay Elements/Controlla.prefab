@@ -87,10 +87,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dead: 0
   paused: 0
+  levelStart: 0
   player: {fileID: 1162960692195234, guid: 0f2340798de2eea468fa5dabd61ef689, type: 2}
   nextLevel: 0
   whichLevel: 3
-  maxLevel: 9
+  maxLevel: 11
   coins: []
   levelName: 
   collectedCoins: 0
+  levelTime: 0
+  timesUp: 0
+  allPoints: 0
+  beatTime: 0
