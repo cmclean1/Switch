@@ -67,6 +67,7 @@ public class Follow_Camera : MonoBehaviour {
 			panLevel ();
 		}
 	}
+
 	// Update is called once per frame
 	void LateUpdate () {
 		if (followCamera) {

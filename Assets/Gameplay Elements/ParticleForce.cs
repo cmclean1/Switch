@@ -13,28 +13,30 @@ public class ParticleForce : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
-		float vel = 6;
-		switch (GetComponentInParent<Force>().direction) {
-		case 0:
-			rb2d.AddForce (new Vector2 (vel, 0));
-			break;
-		case 1:
-			rb2d.AddForce (new Vector2 (0, -vel));
-			break;
-		case 2:
-			rb2d.AddForce (new Vector2(-vel,0));		
-			break;
-		case 3:
-			rb2d.AddForce (new Vector2(0,vel));
-			break;
-		}
-		Collider2D col = Physics2D.OverlapPoint (transform.position);
-		if (col == GetComponentInParent<Collider2D> ()) {
+		if (LevelControlla.control.paused == false) {
+			Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
+			float vel = GetComponentInParent<Force> ().strength;
+			switch (GetComponentInParent<Force> ().direction) {
+			case 0:
+				rb2d.AddForce (new Vector2 (vel, 0));
+				break;
+			case 1:
+				rb2d.AddForce (new Vector2 (0, -vel));
+				break;
+			case 2:
+				rb2d.AddForce (new Vector2 (-vel, 0));		
+				break;
+			case 3:
+				rb2d.AddForce (new Vector2 (0, vel));
+				break;
+			}
+			Collider2D col = Physics2D.OverlapPoint (transform.position);
+			if (col == GetComponentInParent<Collider2D> ()) {
 
-		} else {
-			die = true;
-			Destroy (gameObject);
+			} else {
+				die = true;
+				Destroy (gameObject);
+			}
 		}
 
 	}

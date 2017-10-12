@@ -13,6 +13,8 @@ TagManager:
   - Force
   - Coin
   - Stopwatch
+  - Boss
+  - Minion
   layers:
   - Default
   - TransparentFX

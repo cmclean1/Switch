@@ -74,6 +74,8 @@ MonoBehaviour:
   black: {r: 0, g: 0, b: 0, a: 0}
   grey: {r: 0, g: 0, b: 0, a: 0}
   white: {r: 0, g: 0, b: 0, a: 0}
+  darkgrey: {r: 0, g: 0, b: 0, a: 0}
+  lightgrey: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114962647609439968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,7 +93,7 @@ MonoBehaviour:
   player: {fileID: 1162960692195234, guid: 0f2340798de2eea468fa5dabd61ef689, type: 2}
   nextLevel: 0
   whichLevel: 3
-  maxLevel: 11
+  maxLevel: 13
   coins: []
   levelName: 
   collectedCoins: 0

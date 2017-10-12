@@ -6,6 +6,7 @@ public class isButton : MonoBehaviour {
 	public bool activated;
 	public float alphaValue;
 	bool invertAlpha;
+	public buttonEffect[] button;
 	/* 0 = player press, always on
 	 * 1 = player press, timer on
 	 * 2 = on only when player press
@@ -32,5 +33,9 @@ public class isButton : MonoBehaviour {
 				}
 			}
 		}
+	}
+	public class buttonEffect{
+		GameObject ganobject;
+		int effectWhat;
 	}
 }

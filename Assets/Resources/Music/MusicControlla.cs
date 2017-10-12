@@ -25,7 +25,7 @@ public class MusicControlla : MonoBehaviour
 		soundMult = ManageSaveData.control.soundMult;
 		player = GameObject.FindGameObjectWithTag ("Player");
 		if (canPlay) {
-			if ((player.GetComponent<ChangeColor> ().type == type && player.GetComponent<ChangeColor> ().Switch == Switch) || player.GetComponent<ChangeColor> ().sp.color == Color.black || player.GetComponent<ChangeColor> ().sp.color == Color.white) {
+			if ((player.GetComponent<ChangeColor> ().type == type && player.GetComponent<ChangeColor> ().Switch == Switch) || player.GetComponent<ChangeColor> ().sp.color == ColorLibrary.colorLib.grey || player.GetComponent<ChangeColor> ().sp.color == Color.white) {
 				aud.volume += (.005f*soundMult);
 				if (aud.volume >= 1*soundMult) {
 					aud.volume = 1*soundMult;

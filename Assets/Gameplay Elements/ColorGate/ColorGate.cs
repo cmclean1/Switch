@@ -22,7 +22,7 @@ public class ColorGate : MonoBehaviour
 		sp = GetComponent<SpriteRenderer> ();
 		if (type == 0) {
 			if (Switch == false) {
-				sp.color = ColorLibrary.colorLib.black;
+				sp.color = ColorLibrary.colorLib.grey;
 			} else
 				sp.color = ColorLibrary.colorLib.white;
 		} else if (type == 1) {

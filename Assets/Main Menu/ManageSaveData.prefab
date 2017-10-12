@@ -54,7 +54,7 @@ MonoBehaviour:
   levelUnlocked: 0
   whichPlayer: 0
   whichMusic: 0
-  maxLevel: 11
+  maxLevel: 13
   soundMult: 0
   playMode: 0
   player: {fileID: 0}

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 3
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1001 &144424030
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1001 &385185271
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 2
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1001 &788912718
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 3
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1 &1386931510 stripped
@@ -923,7 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1001 &1447575575
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 2
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1001 &1553049064
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 3
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1 &1779566380 stripped
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 3
   particle: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
-  strength: 0
+  strength: 6
   part: {fileID: 1821360464985810, guid: 26503086a7957bf4db02c0c70503eea9, type: 2}
   parts: []
 --- !u!1001 &1931215829

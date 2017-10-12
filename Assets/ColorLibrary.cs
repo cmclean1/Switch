@@ -13,6 +13,8 @@ public class ColorLibrary : MonoBehaviour {
 	public Color black;
 	public Color grey;
 	public Color white;
+	public Color darkgrey;
+	public Color lightgrey;
 	// Use this for initialization
 	void Awake ()
 	{
@@ -32,6 +34,8 @@ public class ColorLibrary : MonoBehaviour {
 		grey = new Color (.5f, .5f, .5f);
 		black = new Color (0, 0, 0);
 		white = new Color (1, 1, 1);
+		darkgrey = new Color (.2f, .2f, .2f);
+		lightgrey = new Color (.7f, .7f, .7f);
 	}
 	
 	// Update is called once per frame

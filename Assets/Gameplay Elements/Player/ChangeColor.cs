@@ -27,6 +27,7 @@ public class ChangeColor : MonoBehaviour
 	float colorGateStart;
 	float colorGateEnd;
 	float ColorGateDuration;
+	public bool invincible;
 	// Use this for initialization
 	void Start ()
 	{
@@ -135,7 +136,7 @@ public class ChangeColor : MonoBehaviour
 				}
 				if (squareOn.GetComponent ("Force") != null) {
 					if (squareOn.GetComponent<Force> ().enabled) {
-						getForced (squareOn.GetComponent<Force> ().direction);
+						getForced (squareOn.GetComponent<Force> ().direction, squareOn.GetComponent<Force> ().strength);
 					}
 				}
 				if (squareOn.GetComponent<isButton> () != null) {
@@ -197,22 +198,22 @@ public class ChangeColor : MonoBehaviour
 		}
 	}
 
-	void getForced (int direction)
+	void getForced (int direction, float strength)
 	{
 		Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
-		float vel = 6;
+		float vel = strength;
 		switch (direction) {
 		case 0:
-			rb2d.AddForce (new Vector2 (vel, 0));
+			rb2d.AddForce (new Vector2 (strength, 0));
 			break;
 		case 1:
-			rb2d.AddForce (new Vector2 (0, -vel));
+			rb2d.AddForce (new Vector2 (0, -strength));
 			break;
 		case 2:
-			rb2d.AddForce (new Vector2 (-vel, 0));		
+			rb2d.AddForce (new Vector2 (-strength, 0));		
 			break;
 		case 3:
-			rb2d.AddForce (new Vector2 (0, vel));
+			rb2d.AddForce (new Vector2 (0, strength));
 			break;
 		}
 
@@ -266,7 +267,7 @@ public class ChangeColor : MonoBehaviour
 
 		if (type == 0) {
 			if (Switch == false) {
-				sp.color = ColorLibrary.colorLib.white;
+				sp.color = ColorLibrary.colorLib.grey;
 			} else
 				sp.color = ColorLibrary.colorLib.black;
 		} else if (type == 1) {
@@ -311,7 +312,7 @@ public class ChangeColor : MonoBehaviour
 			deathRate = .01f;
 			restoreRate = .005f;
 		}
-		if (dying) {
+		if (dying && !invincible) {
 			dieScale.x -= deathRate;
 			dieScale.y -= deathRate;
 			if (transform.localScale.x <= .2f) {
@@ -327,6 +328,5 @@ public class ChangeColor : MonoBehaviour
 			}
 		}
 		transform.localScale = dieScale;
-
 	}
 }
