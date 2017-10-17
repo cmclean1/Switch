@@ -25,15 +25,17 @@ public class MusicControlla : MonoBehaviour
 		soundMult = ManageSaveData.control.soundMult;
 		player = GameObject.FindGameObjectWithTag ("Player");
 		if (canPlay) {
-			if ((player.GetComponent<ChangeColor> ().type == type && player.GetComponent<ChangeColor> ().Switch == Switch) || player.GetComponent<ChangeColor> ().sp.color == ColorLibrary.colorLib.grey || player.GetComponent<ChangeColor> ().sp.color == Color.white) {
-				aud.volume += (.005f*soundMult);
-				if (aud.volume >= 1*soundMult) {
-					aud.volume = 1*soundMult;
-				}
-			} else {
-				aud.volume -= (.005f*soundMult);
-				if (aud.volume <= (.3f*soundMult)) {
-					aud.volume = (.3f*soundMult);
+			if (player != null) {
+				if ((player.GetComponent<ChangeColor> ().type == type && player.GetComponent<ChangeColor> ().Switch == Switch) || player.GetComponent<ChangeColor> ().sp.color == ColorLibrary.colorLib.grey || player.GetComponent<ChangeColor> ().sp.color == Color.white) {
+					aud.volume += (.005f * soundMult);
+					if (aud.volume >= 1 * soundMult) {
+						aud.volume = 1 * soundMult;
+					}
+				} else {
+					aud.volume -= (.005f * soundMult);
+					if (aud.volume <= (.3f * soundMult)) {
+						aud.volume = (.3f * soundMult);
+					}
 				}
 			}
 		}

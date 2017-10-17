@@ -33,6 +33,7 @@ public class Boss1 : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		player = GameObject.FindGameObjectWithTag ("Player");
 		GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.grey;
 		if (stage == 0) {
 			min = Instantiate (minions, transform.position, Quaternion.identity) as GameObject;
@@ -51,6 +52,7 @@ public class Boss1 : MonoBehaviour {
 				StartCoroutine (waitForStage2 ());
 			}
 		} else if (stage == 2) {
+			print (vulnerable);
 			GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.darkgrey;
 			allMinions = GameObject.FindGameObjectsWithTag ("Minion");
 			if (allMinions.Length == 0) {

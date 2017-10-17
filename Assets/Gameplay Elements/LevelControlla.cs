@@ -33,6 +33,7 @@ public class LevelControlla : MonoBehaviour
 	{
 		announcer = Announcer.announcer;
 		announcer.Display (levelName);
+		maxLevel = ManageSaveData.control.maxLevel;
 		player = ManageSaveData.control.player;
 		if (ManageSaveData.control.player == null) {
 			player = Resources.Load ("SquarePlayer") as GameObject;
@@ -40,7 +41,7 @@ public class LevelControlla : MonoBehaviour
 		dead = false;
 		paused = false;
 		timesUp = false;
-		Instantiate (player, transform.position, Quaternion.identity);
+		//Instantiate (player, transform.position, Quaternion.identity);
 		musicControlla = GameObject.FindGameObjectsWithTag ("MusicControlla");
 		if (whichLevel > ManageSaveData.control.levelUnlocked) {
 			ManageSaveData.control.levelUnlocked = whichLevel;
@@ -51,6 +52,7 @@ public class LevelControlla : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		
 		coins =  GameObject.FindGameObjectsWithTag ("Coin");
 		if (Input.GetMouseButtonDown (0) && dead) {
 			ManageSaveData.control.Save ();

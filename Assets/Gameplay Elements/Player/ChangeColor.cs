@@ -16,7 +16,7 @@ public class ChangeColor : MonoBehaviour
 	Vector2 dieScale;
 	GameObject controlla;
 	LevelControlla control;
-	bool dying;
+	public bool dying;
 	Color switchColor;
 	public Color currentColor;
 	public bool touchedGate;
@@ -94,6 +94,7 @@ public class ChangeColor : MonoBehaviour
 		if (Backgrounds.Length == 0) {
 			squareColor = null;
 		}
+		print ("touchedgate" + touchedGate);
 		if (squareOn != null) {
 			foreach (Collider2D bg in Backgrounds) {
 				squareOn = bg;	

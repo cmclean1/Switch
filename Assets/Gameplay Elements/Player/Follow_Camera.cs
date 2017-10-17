@@ -59,6 +59,9 @@ public class Follow_Camera : MonoBehaviour {
 			followCamera = true;
 			control.levelStart = true;
 			GetComponent<ScreenOverlay> ().intensity = 0;
+			player = ManageSaveData.control.player;
+			Instantiate (player, controlla.transform.position, Quaternion.identity);
+
 		}
 	}
 	void Update()

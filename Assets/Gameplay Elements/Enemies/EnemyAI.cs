@@ -19,14 +19,16 @@ public class EnemyAI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.darkgrey;
+		GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.grey;
 		player = GameObject.FindGameObjectWithTag ("Player");
-		if (Vector2.Distance (transform.position, player.transform.position) <= detectionRadius) {
+		if (Vector2.Distance (transform.position, player.transform.position) <= detectionRadius && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.grey && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.white) {
 			attacking = true;
 		} else {
 			attacking = false;
 		}
 		if (attacking) {
+			GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.darkgrey;
+
 			attack ();
 		}
 		if (!attacking) {
