@@ -19,8 +19,13 @@ public class Follow_Camera : MonoBehaviour {
 	void Start () {
 		controlla = GameObject.FindGameObjectWithTag ("Controlla");
 		control = LevelControlla.control;
-		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -10);
+//		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -10);
 		GetComponent<ScreenOverlay> ().intensity = -1;
+		player = ManageSaveData.control.player;
+		if (ManageSaveData.control.player == null) {
+			player = Resources.Load ("SquarePlayer") as GameObject;
+		}
+
 	}
 	void panLevel()
 	{
@@ -59,7 +64,6 @@ public class Follow_Camera : MonoBehaviour {
 			followCamera = true;
 			control.levelStart = true;
 			GetComponent<ScreenOverlay> ().intensity = 0;
-			player = ManageSaveData.control.player;
 			Instantiate (player, controlla.transform.position, Quaternion.identity);
 
 		}

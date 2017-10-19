@@ -6,6 +6,7 @@ public class ElementChangeColor : MonoBehaviour {
 	public int[] types;
 	public bool[] Switches;
 	public float timeInterval;
+	public bool happenOnce;
 	Color selected;
 	float time;
 	int whichColor;
@@ -21,10 +22,13 @@ public class ElementChangeColor : MonoBehaviour {
 			whichColor++;
 			if (whichColor > types.Length-1) {
 				whichColor = 0;
+				if (happenOnce) {
+					enabled = false;
+				}
 			}
 		}
 		GetComponent<ElementColorControl> ().type = types [whichColor];
-		GetComponent<ElementColorControl> ().Switch = Switches [whichColor];;
+		GetComponent<ElementColorControl> ().Switch = Switches [whichColor];
 
 	}
 }

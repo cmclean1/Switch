@@ -94,8 +94,7 @@ public class ChangeColor : MonoBehaviour
 		if (Backgrounds.Length == 0) {
 			squareColor = null;
 		}
-		print ("touchedgate" + touchedGate);
-		if (squareOn != null) {
+			if (squareOn != null) {
 			foreach (Collider2D bg in Backgrounds) {
 				squareOn = bg;	
 				if (squareOn.gameObject.tag == "ColorGate" && !touchedGate) {
