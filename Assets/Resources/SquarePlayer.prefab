@@ -164,11 +164,13 @@ MonoBehaviour:
   type: 0
   Switch: 0
   sp: {fileID: 0}
+  dying: 0
   currentColor: {r: 0, g: 0, b: 0, a: 0}
   touchedGate: 0
   colorGateIndicator: {fileID: 1797167859437528, guid: 79178340cd71ac64bb7f896343aec5c0,
     type: 2}
   blackOrWhite: 0
+  invincible: 0
 --- !u!114 &114691640162192676
 MonoBehaviour:
   m_ObjectHideFlags: 1

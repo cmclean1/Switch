@@ -27,10 +27,13 @@ public class ChangeColor : MonoBehaviour
 	float colorGateStart;
 	float colorGateEnd;
 	float ColorGateDuration;
+	float frictionMult;
 	public bool invincible;
+	float initialDrag;
 	// Use this for initialization
 	void Start ()
 	{
+		initialDrag =  GetComponent<Rigidbody2D>().drag;
 		announcer = Announcer.announcer;
 		blackOrWhite = true;
 		type = 0;
@@ -67,6 +70,8 @@ public class ChangeColor : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		frictionMult = 1;
+			
 		if (type == 0) {
 		} else if (type == 1) {
 			if (Switch == false) {
@@ -139,6 +144,14 @@ public class ChangeColor : MonoBehaviour
 						getForced (squareOn.GetComponent<Force> ().direction, squareOn.GetComponent<Force> ().strength);
 					}
 				}
+				if (squareOn.GetComponent ("ElementFriction") != null) {
+					if(squareOn.GetComponent<ElementFriction> ().enabled)
+					{
+					frictionMult = squareOn.GetComponent<ElementFriction> ().frictionLevel;
+					}
+				} else {
+					frictionMult = 1;
+				}
 				if (squareOn.GetComponent<isButton> () != null) {
 					squareOn.GetComponent<isButton> ().activated = true;
 				}
@@ -151,6 +164,9 @@ public class ChangeColor : MonoBehaviour
 				}
 			}
 		}
+		Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
+		rb2d.drag = initialDrag * frictionMult;
+		print (frictionMult);
 		if (squareColor != null) {
 			if (squareColor.color == Color.white || squareColor.color == currentColor || touchedGate) {
 				dying = false;
@@ -167,7 +183,9 @@ public class ChangeColor : MonoBehaviour
 				dying = true;
 			}
 		}
+		if(!control.paused)
 		die ();
+
 
 	}
 
