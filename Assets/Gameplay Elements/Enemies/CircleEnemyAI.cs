@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class CircleEnemyAI : MonoBehaviour
 {
 	Rigidbody2D rb2d;
 	public GameObject player;

@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4494471631078788}
   - component: {fileID: 212142153589071052}
-  - component: {fileID: 114372891597149926}
   - component: {fileID: 61879443419079154}
+  - component: {fileID: 114030799214035904}
+  - component: {fileID: 61010209838440476}
   m_Layer: 0
   m_Name: SquareEnemy
   m_TagString: Untagged
@@ -42,6 +43,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61010209838440476
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965540134957978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &61879443419079154
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -56,7 +71,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &114372891597149926
+--- !u!114 &114030799214035904
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -64,9 +79,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1965540134957978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dafd2e52af8c8748bf1727944b45b8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 77905f9be91adef48aaa9a8eccd68081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  attacking: 0
+  attackPhase: 0
 --- !u!212 &212142153589071052
 SpriteRenderer:
   m_ObjectHideFlags: 1
