@@ -32,7 +32,7 @@ public class LevelControlla : MonoBehaviour
 	void Start ()
 	{
 		announcer = Announcer.announcer;
-		announcer.Display (levelName);
+		announcer.Display ("LVL " + whichLevel + ": " + levelName);
 		maxLevel = ManageSaveData.control.maxLevel;
 		player = ManageSaveData.control.player;
 		if (ManageSaveData.control.player == null) {

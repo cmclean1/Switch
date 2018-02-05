@@ -9,7 +9,7 @@ public class SquareEnemyAI : MonoBehaviour {
 	public bool attacking;
 	public int attackPhase;
 	Vector2 size;
-	// Use this for initialization
+	// Use this for initializatio	n
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		size = new Vector2 (1f, 1f);
@@ -19,10 +19,10 @@ public class SquareEnemyAI : MonoBehaviour {
 	void Update () {
 		GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.grey;
 		player = GameObject.FindGameObjectWithTag ("Player");
-		if (Vector2.Distance (transform.position, player.transform.position) <= detectionRadius && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.grey && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.white) {
+		if (player != null && Vector2.Distance (transform.position, player.transform.position) <= detectionRadius && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.grey && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.white) {
 			attacking = true;
 		}
-		if (player.GetComponent<SpriteRenderer> ().color == ColorLibrary.colorLib.grey || player.GetComponent<SpriteRenderer> ().color == ColorLibrary.colorLib.white) {
+		if (player != null && player.GetComponent<SpriteRenderer> ().color == ColorLibrary.colorLib.grey || player != null && player.GetComponent<SpriteRenderer> ().color == ColorLibrary.colorLib.white || player == null) {
 			attacking = false;
 		}
 		if (attacking) {
@@ -63,7 +63,7 @@ public class SquareEnemyAI : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (1);
 		if (attackPhase == 1) {
-			transform.position = new Vector2 (player.transform.position.x, player.transform.position.y);
+			transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -1);
 			size.x = .5f;
 			size.y = .5f;
 			attackPhase = 2;

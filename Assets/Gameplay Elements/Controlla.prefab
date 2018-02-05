@@ -93,7 +93,7 @@ MonoBehaviour:
   player: {fileID: 1162960692195234, guid: 0f2340798de2eea468fa5dabd61ef689, type: 2}
   nextLevel: 0
   whichLevel: 3
-  maxLevel: 14
+  maxLevel: 17
   coins: []
   levelName: 
   collectedCoins: 0

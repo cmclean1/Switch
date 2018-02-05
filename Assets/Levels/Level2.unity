@@ -297,7 +297,7 @@ MonoBehaviour:
   whichLevel: 2
   maxLevel: 8
   coins: []
-  levelName: 'Level 2: Tightrope'
+  levelName: Tightrope
   collectedCoins: 0
   levelTime: 15
   timesUp: 0
@@ -337,6 +337,8 @@ MonoBehaviour:
   black: {r: 0, g: 0, b: 0, a: 0}
   grey: {r: 0, g: 0, b: 0, a: 0}
   white: {r: 0, g: 0, b: 0, a: 0}
+  darkgrey: {r: 0, g: 0, b: 0, a: 0}
+  lightgrey: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &529280948
 Prefab:
   m_ObjectHideFlags: 0

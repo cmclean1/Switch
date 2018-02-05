@@ -17,6 +17,7 @@ public class ShowEndText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		text.enabled = true;
 		if (control.nextLevel == true) {
 			text.text = "Level Complete\nNEXT LEVEL: LMB\nMAIN MENU: ESC";
 			text.color = new Color (0, 0, 0, 1);
@@ -30,8 +31,7 @@ public class ShowEndText : MonoBehaviour {
 			text.text = "Paused\n RESUME: LMB\n MAIN MENU: ESC";
 			text.color = new Color (0, 0, 0, 1);
 		} else {
-			text.color = new Color (0, 0, 0, 0);
-
+			text.enabled = false;
 		}
 	}
 }

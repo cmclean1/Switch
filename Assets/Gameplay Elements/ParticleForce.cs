@@ -30,13 +30,16 @@ public class ParticleForce : MonoBehaviour {
 				rb2d.AddForce (new Vector2 (0, vel));
 				break;
 			}
-			Collider2D col = Physics2D.OverlapPoint (transform.position);
-			if (col == GetComponentInParent<Collider2D> ()) {
-
-			} else {
-				die = true;
-				Destroy (gameObject);
+			Collider2D[] cols = Physics2D.OverlapPointAll (transform.position);
+			die = true;
+			foreach (Collider2D col in cols) {
+				if (col == GetComponentInParent<Collider2D> ()) {
+					die = false;
+				}
 			}
+			if(die == true)
+				Destroy (gameObject);
+			
 		}
 
 	}

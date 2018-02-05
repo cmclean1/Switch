@@ -22,6 +22,12 @@ public class MusicChoice : MonoBehaviour {
 		case 2:
 			text.text = "SONG: MYSTERY";
 			break;
+		case 3:
+			text.text = "SONG: LAMENT";
+			break;
+		case 4:
+			text.text = "SONG: WHAT";
+			break;
 		}
 	}
 
@@ -29,7 +35,7 @@ public class MusicChoice : MonoBehaviour {
 	{
 		if (GetComponent<Button> ().enabled) {
 			ManageSaveData.control.whichMusic++;
-			if (ManageSaveData.control.whichMusic > 2) {
+			if (ManageSaveData.control.whichMusic > 4) {
 				ManageSaveData.control.whichMusic = 0;
 			}
 		}

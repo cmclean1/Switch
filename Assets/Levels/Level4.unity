@@ -138,7 +138,7 @@ Prefab:
     - target: {fileID: 114962647609439968, guid: 7065d2babbb1b4a4dbb4f633eb17de2c,
         type: 2}
       propertyPath: levelName
-      value: 'Level 4: Left then right then left then middle'
+      value: Right  then left then right then middle
       objectReference: {fileID: 0}
     - target: {fileID: 114962647609439968, guid: 7065d2babbb1b4a4dbb4f633eb17de2c,
         type: 2}

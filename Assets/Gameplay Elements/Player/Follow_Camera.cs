@@ -79,6 +79,7 @@ public class Follow_Camera : MonoBehaviour {
 	void LateUpdate () {
 		if (followCamera) {
 			player = GameObject.FindGameObjectWithTag ("Player");
+			if(player != null)
 			transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -10);
 			if (controlla.GetComponent<ManagePowerups> ().powerUps [0] == 1) {
 				inOrOut = true;

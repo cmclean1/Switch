@@ -31,13 +31,10 @@ public class MusicControllaControlla : MonoBehaviour
 	{
 		switch (ManageSaveData.control.whichMusic) {
 		case 0:
-			songNum = Random.Range (1, 3);
+			songNum = Random.Range (1, 5);
 			break;
-		case 1:
-			songNum = 1;
-			break;
-		case 2:
-			songNum = 2;
+		default:
+			songNum = ManageSaveData.control.whichMusic;
 			break;
 		}
 		foreach (GameObject controlla in musicControlla) {

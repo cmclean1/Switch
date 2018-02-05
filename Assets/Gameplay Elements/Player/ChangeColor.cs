@@ -166,7 +166,6 @@ public class ChangeColor : MonoBehaviour
 		}
 		Rigidbody2D rb2d = GetComponent<Rigidbody2D> ();
 		rb2d.drag = initialDrag * frictionMult;
-		print (frictionMult);
 		if (squareColor != null) {
 			if (squareColor.color == Color.white || squareColor.color == currentColor || touchedGate) {
 				dying = false;

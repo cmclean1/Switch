@@ -21,7 +21,7 @@ public class CircleEnemyAI : MonoBehaviour
 	{
 		GetComponent<SpriteRenderer> ().color = ColorLibrary.colorLib.grey;
 		player = GameObject.FindGameObjectWithTag ("Player");
-		if (Vector2.Distance (transform.position, player.transform.position) <= detectionRadius && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.grey && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.white) {
+		if (player != null && Vector2.Distance (transform.position, player.transform.position) <= detectionRadius && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.grey && player.GetComponent<SpriteRenderer>().color != ColorLibrary.colorLib.white) {
 			attacking = true;
 		} else {
 			attacking = false;
@@ -34,11 +34,11 @@ public class CircleEnemyAI : MonoBehaviour
 		if (!attacking) {
 			rb2d.drag = 5;
 		}
-		if (Vector2.Distance (transform.position, player.transform.position) <= .5f) {
+		if (player != null && Vector2.Distance (transform.position, player.transform.position) <= .5f) {
 			rb2d.drag = 5;
 		} 
 
-		if (Vector2.Distance (transform.position, player.transform.position) <= .8f) {
+		if (player != null && Vector2.Distance (transform.position, player.transform.position) <= .8f && attacking) {
 			size.x += .11f;
 			size.y += .11f;
 		} else {
