@@ -1,0 +1,181 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     2111 MB
+    Driver:   22.20.16.4749
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.874 seconds
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\wffls\OneDrive\Documents\GitHub\Switch\switch_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initialized touch support.
+UnloadTime: 1.166505 ms
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.768849 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 607.
+Total: 8.442872 ms (FindLiveObjects: 0.052479 ms CreateObjectMapping: 0.042666 ms MarkObjects: 0.302506 ms  DeleteObjects: 8.044366 ms)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Follow_Camera.panLevel () [0x00000] in <filename unknown>:0 
+  at Follow_Camera.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.065812 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 0.485546 ms (FindLiveObjects: 0.097706 ms CreateObjectMapping: 0.075093 ms MarkObjects: 0.305919 ms  DeleteObjects: 0.005973 ms)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Follow_Camera.panLevel () [0x00000] in <filename unknown>:0 
+  at Follow_Camera.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.592212 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 0.638719 ms (FindLiveObjects: 0.050346 ms CreateObjectMapping: 0.028159 ms MarkObjects: 0.553386 ms  DeleteObjects: 0.005973 ms)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Follow_Camera.panLevel () [0x00000] in <filename unknown>:0 
+  at Follow_Camera.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.483839 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 687.
+Total: 11.024203 ms (FindLiveObjects: 0.067413 ms CreateObjectMapping: 0.037973 ms MarkObjects: 0.364799 ms  DeleteObjects: 10.553164 ms)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'Squares Bold Free' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.711252 ms
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 598.
+Total: 9.701538 ms (FindLiveObjects: 0.058026 ms CreateObjectMapping: 0.042239 ms MarkObjects: 0.285866 ms  DeleteObjects: 9.314552 ms)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Follow_Camera.panLevel () [0x00000] in <filename unknown>:0 
+  at Follow_Camera.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1c5c -> priority: 1 

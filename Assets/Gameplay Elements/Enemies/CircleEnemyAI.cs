@@ -59,6 +59,6 @@ public class CircleEnemyAI : MonoBehaviour
 		Vector3 dis = (transform.position - player.transform.position);
 		rb2d.drag = 1;
 		dis = Vector3.Normalize (dis);
-		rb2d.AddForce (dis * -10);
+		rb2d.AddForce (dis * -Random.Range(9f,11f));
 	}
 }
