@@ -14,6 +14,8 @@ public class LevelControlla : MonoBehaviour
 	public bool nextLevel;
 	public int whichLevel;
 	public int maxLevel;
+	public GameObject arrow;
+	public bool arrowOn;
 	GameObject[] musicControlla;
 	public GameObject[] coins;
 	public string levelName;
@@ -45,6 +47,10 @@ public class LevelControlla : MonoBehaviour
 		musicControlla = GameObject.FindGameObjectsWithTag ("MusicControlla");
 		if (whichLevel > ManageSaveData.control.levelUnlocked) {
 			ManageSaveData.control.levelUnlocked = whichLevel;
+		}
+		if(arrowOn == true)
+		{
+			Instantiate(arrow);
 		}
 
 	}

@@ -8,7 +8,7 @@ public class ParticleForce : MonoBehaviour {
 	public bool goDie;
 	void Start () {
 		die = false;
-		
+        transform.localScale = new Vector3(1/transform.parent.localScale.x * .09f, 1/transform.parent.localScale.y * .09f, 1);
 	}
 	
 	// Update is called once per frame

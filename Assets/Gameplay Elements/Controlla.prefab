@@ -1,22 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1663480937838206}
-  m_IsPrefabParent: 1
 --- !u!1 &1663480937838206
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4642901736896396}
   - component: {fileID: 114962647609439968}
@@ -31,9 +21,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4642901736896396
 Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663480937838206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
@@ -42,11 +33,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114962647609439968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663480937838206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89101e26cc10fcf4fbc29c4a22437aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dead: 0
+  paused: 0
+  levelStart: 0
+  player: {fileID: 1162960692195234, guid: 0f2340798de2eea468fa5dabd61ef689, type: 3}
+  nextLevel: 0
+  whichLevel: 3
+  maxLevel: 17
+  arrow: {fileID: 1428980688233040, guid: d71ef1b54f79d1544a7ca1270575bb3e, type: 3}
+  arrowOn: 0
+  coins: []
+  levelName: 
+  collectedCoins: 0
+  levelTime: 0
+  timesUp: 0
+  allPoints: 0
+  beatTime: 0
 --- !u!114 &114528501523517904
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663480937838206}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -56,9 +76,10 @@ MonoBehaviour:
   powerUps: 
 --- !u!114 &114553683339802610
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663480937838206}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -76,28 +97,3 @@ MonoBehaviour:
   white: {r: 0, g: 0, b: 0, a: 0}
   darkgrey: {r: 0, g: 0, b: 0, a: 0}
   lightgrey: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &114962647609439968
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1663480937838206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89101e26cc10fcf4fbc29c4a22437aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dead: 0
-  paused: 0
-  levelStart: 0
-  player: {fileID: 1162960692195234, guid: 0f2340798de2eea468fa5dabd61ef689, type: 2}
-  nextLevel: 0
-  whichLevel: 3
-  maxLevel: 17
-  coins: []
-  levelName: 
-  collectedCoins: 0
-  levelTime: 0
-  timesUp: 0
-  allPoints: 0
-  beatTime: 0
